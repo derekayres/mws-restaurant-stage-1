@@ -1,6 +1,6 @@
-var staticCacheName = 'restaurant-cache-1';
+var baseCache = 'restaurant-cache-1';
 
-let urlToCache = [
+let toBeCached = [
   '/',
   '/restaurant.html',
   '/css/styles.css',
@@ -20,10 +20,12 @@ let urlToCache = [
   '/js/dbhelper.js'
 ];
 self.addEventListener('install', function(event) {
+  //installation
   event.waitUntil(
-    caches.open(staticCacheName).then(function(cache) {
-      console.log(cache);
-      return cache.addAll(urlToCache);
+    caches.open(baseCache)
+    .then(function(cache) {
+      console.log('Cache opened ok', cache);
+      return cache.addAll(toBeCached);
     }).catch(error => {
       console.log(error);
     })
@@ -36,7 +38,7 @@ self.addEventListener('activate', function (event) {
       return Promise.all(
         cacheNames.filter(function (cacheName) {
           return cacheName.startsWith('restaurant-') &&
-            cacheName != staticCacheName;
+            cacheName != baseCache;
         }).map(function (cacheName) {
           return caches.delete(cacheName);
         })
