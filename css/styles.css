@@ -52,15 +52,17 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 nav {
   width: 100%;
   height: 80px;
-  background-color: #252831;
-  text-align:center;
+  background-color: #04f3e6;
+	display: grid;
+  /*text-align:center;*/
+	list-style: 1.4;
 }
 nav h1 {
   margin: auto;
 }
 nav h1 a {
   color: #fff;
-  font-size: 14pt;
+	font-size: 19pt;
   font-weight: 200;
   letter-spacing: 10px;
   text-transform: uppercase;
@@ -105,17 +107,27 @@ nav h1 a {
 }
 /* ====================== Restaurant Filtering ====================== */
 .filter-options {
-  width: 100%;
+	padding: 5px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+	/*width: 100%;*/
+	display: flex
+	flex-wrap: wrap;
   height: 50px;
-  background-color: #3397DB;
+  background-color: #04f3e6;
   align-items: center;
+	justify-content: center;
 }
 .filter-options h2 {
   color: white;
-  font-size: 1rem;
-  font-weight: normal;
+  /*font-size: 1.5rem;*/
+  font-weight: 300;
   line-height: 1;
   margin: 0 20px;
+	text-transform: uppercase;
+	letter-spacing: 5pt;
 }
 .filter-options select {
   background-color: white;
@@ -145,7 +157,7 @@ nav h1 a {
   min-height: 380px;
   padding: 0 30px 25px;
   text-align: left;
-  width: 270px;
+  /*width: 270px;*/
 }
 #restaurants-list .restaurant-img {
   background-color: #ccc;
