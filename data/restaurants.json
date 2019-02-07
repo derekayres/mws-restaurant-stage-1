@@ -5,6 +5,7 @@
     "neighborhood": "Manhattan",
     "photograph": "1.jpg",
     "address": "171 E Broadway, New York, NY 10002",
+    "image-alt": "main image value",
     "latlng": {
       "lat": 40.713829,
       "lng": -73.989667
